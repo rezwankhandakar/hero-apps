@@ -1,0 +1,146 @@
+[
+  {
+    "image": "https://i.ibb.co.com/67gxG9qN/download.jpg",
+    "title": "ChatWave",
+    "companyName": "NextGen Software",
+    "id": 1,
+    "description": "ChatWave is a modern chat application designed for seamless and secure communication. It allows users to send messages, share files, and make high-quality voice and video calls. Whether for friends, family, or team collaboration, ChatWave keeps everyone connected effortlessly.",
+    "size": 85,
+    "reviews": 15300,
+    "ratingAvg": 4.6,
+    "downloads": "2.5M",
+    "ratings": [
+      { "name": "1 star", "count": 800 },
+      { "name": "2 star", "count": 1200 },
+      { "name": "3 star", "count": 1900 },
+      { "name": "4 star", "count": 4200 },
+      { "name": "5 star", "count": 7200 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/n8MV7rMY/download.png",
+    "title": "FitTrack",
+    "companyName": "Wellness Labs",
+    "id": 2,
+    "description": "FitTrack helps you take control of your fitness journey by tracking your workouts, meals, and sleep. With built-in calorie counters, personalized workout plans, and daily progress reports, it motivates you to stay active and live a balanced, healthier lifestyle.",
+    "size": 120,
+    "reviews": 8750,
+    "ratingAvg": 4.3,
+    "downloads": "1.4M",
+    "ratings": [
+      { "name": "1 star", "count": 500 },
+      { "name": "2 star", "count": 700 },
+      { "name": "3 star", "count": 1200 },
+      { "name": "4 star", "count": 2600 },
+      { "name": "5 star", "count": 3750 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/BVHt0Jt6/download-1.png",
+    "title": "StudyNest",
+    "companyName": "BrightEdu",
+    "id": 3,
+    "description": "StudyNest is an interactive learning app for students featuring notes, quizzes, flashcards, and group discussions. It provides a fun and engaging way to study, helping students improve their understanding and prepare effectively for exams.",
+    "size": 95,
+    "reviews": 5600,
+    "ratingAvg": 4.7,
+    "downloads": "900K",
+    "ratings": [
+      { "name": "1 star", "count": 200 },
+      { "name": "2 star", "count": 300 },
+      { "name": "3 star", "count": 700 },
+      { "name": "4 star", "count": 1700 },
+      { "name": "5 star", "count": 2700 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/Rkwv7bcG/download-2.png",
+    "title": "PicPerfect",
+    "companyName": "PixelHouse",
+    "id": 4,
+    "description": "PicPerfect is an AI-powered photo editor offering stunning filters, visual effects, and an advanced background remover. Easily retouch and enhance your photos to make them social media-ready within seconds — no professional skills required.",
+    "size": 110,
+    "reviews": 22100,
+    "ratingAvg": 4.5,
+    "downloads": "5.2M",
+    "ratings": [
+      { "name": "1 star", "count": 1500 },
+      { "name": "2 star", "count": 2200 },
+      { "name": "3 star", "count": 3200 },
+      { "name": "4 star", "count": 5800 },
+      { "name": "5 star", "count": 9400 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/9HM1gjjc/download-3.png",
+    "title": "Foodiez",
+    "companyName": "UrbanEats Ltd.",
+    "id": 5,
+    "description": "Foodiez makes food discovery and ordering easier than ever. Browse nearby restaurants, read reviews, place online orders, and track deliveries in real time. With exclusive deals and fast service, Foodiez is the ultimate app for food lovers.",
+    "size": 130,
+    "reviews": 18900,
+    "ratingAvg": 4.2,
+    "downloads": "3.1M",
+    "ratings": [
+      { "name": "1 star", "count": 1800 },
+      { "name": "2 star", "count": 1900 },
+      { "name": "3 star", "count": 2900 },
+      { "name": "4 star", "count": 4700 },
+      { "name": "5 star", "count": 6600 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/xS3PgCqP/images.png",
+    "title": "SoundScape",
+    "companyName": "Harmony Studios",
+    "id": 6,
+    "description": "SoundScape lets you explore millions of songs, artists, and albums from around the world. Create personalized playlists, discover trending tracks, and enjoy smart recommendations based on your mood and listening habits.",
+    "size": 150,
+    "reviews": 45200,
+    "ratingAvg": 4.8,
+    "downloads": "12M",
+    "ratings": [
+      { "name": "1 star", "count": 2100 },
+      { "name": "2 star", "count": 2600 },
+      { "name": "3 star", "count": 4100 },
+      { "name": "4 star", "count": 9400 },
+      { "name": "5 star", "count": 27000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/whm7tPK6/download-4.png",
+    "title": "Travelo",
+    "companyName": "GlobeTech",
+    "id": 7,
+    "description": "Travelo simplifies travel planning by letting you book flights, hotels, and rental cars all in one place. With real-time updates, travel guides, and exclusive offers, it ensures your trips are smooth, convenient, and budget-friendly.",
+    "size": 105,
+    "reviews": 7800,
+    "ratingAvg": 4.4,
+    "downloads": "1.6M",
+    "ratings": [
+      { "name": "1 star", "count": 600 },
+      { "name": "2 star", "count": 800 },
+      { "name": "3 star", "count": 1200 },
+      { "name": "4 star", "count": 2400 },
+      { "name": "5 star", "count": 2800 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/LzJcNSvr/download-5.png",
+    "title": "MindfulMe",
+    "companyName": "ZenCore",
+    "id": 8,
+    "description": "MindfulMe helps you find inner peace through guided meditation, deep breathing, and relaxing soundscapes. Whether you want to reduce stress, sleep better, or improve focus, this app offers personalized sessions to help you unwind anytime.",
+    "size": 90,
+    "reviews": 6400,
+    "ratingAvg": 4.9,
+    "downloads": "850K",
+    "ratings": [
+      { "name": "1 star", "count": 100 },
+      { "name": "2 star", "count": 200 },
+      { "name": "3 star", "count": 400 },
+      { "name": "4 star", "count": 1300 },
+      { "name": "5 star", "count": 4400 }
+    ]
+  }
+]
