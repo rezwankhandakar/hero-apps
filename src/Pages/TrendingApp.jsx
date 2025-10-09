@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { NavLink, useLoaderData } from 'react-router';
+import { Link, NavLink, useLoaderData } from 'react-router';
 const TrendingApp = () => {
     const apps = useLoaderData();
     return (
@@ -15,8 +15,10 @@ const TrendingApp = () => {
             <div className=' h-auto w-10/12 mx-auto px-6 py-3'>
 
                 <div class="grid grid-cols-4 gap-4">
-
                     {apps.map(app => (
+                    <Link key={app.id} to={`/appDetails/${app.id}`}> 
+                    
+                    
                         <div className='bg-white h-64 rounded-md '>
                         <img className='w-48 h-48 mx-auto pt-4 pb-1' src={app.image} alt="" />
                         <h2 className='text-black text-[14px] font-semibold text-center'>{app.companyName}</h2>
@@ -32,13 +34,13 @@ const TrendingApp = () => {
                                 <p className='text-[14px] font-bold text-[#FF8811]'>{app.ratingAvg}</p>
                             </div>
                         </div>
-                    </div>
-    
-                      ))}
-
                     
-
-                </div>
+                      </div>
+                    </Link>
+                    
+                    ))}
+                    </div>
+                
             </div>
             <NavLink to='/allApplication'><button className='h-6 w-24 rounded-sm bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-[14px] my-5'>Show All</button></NavLink>
         </div>
