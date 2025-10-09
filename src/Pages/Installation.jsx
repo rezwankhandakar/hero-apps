@@ -13,10 +13,7 @@ const Installation = () => {
     const storedApps = JSON.parse(localStorage.getItem("installedApps")) || [];
     setInstalledApps(storedApps);
 
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-
+    const timer = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -24,22 +21,16 @@ const Installation = () => {
     const updated = installedApps.filter(app => app.id !== id);
     setInstalledApps(updated);
     localStorage.setItem("installedApps", JSON.stringify(updated));
-
     toast.success('App uninstalled successfully!', {
       duration: 2500,
       position: 'top-center',
-      style: {
-        background: '#333',
-        color: '#fff',
-        fontSize: '14px',
-      },
+      style: { background: '#333', color: '#fff', fontSize: '14px' },
       icon: '🗑️',
     });
   };
 
-  // Helper: Convert "1.2M" or "200K" to Number
   const parseDownloads = (val) => {
-    if (typeof val === "number") return val; // already number
+    if (typeof val === "number") return val;
     if (!val) return 0;
     val = val.toString().trim().toUpperCase();
     if (val.endsWith("M")) return parseFloat(val) * 1_000_000;
@@ -47,34 +38,25 @@ const Installation = () => {
     return parseFloat(val) || 0;
   };
 
-  // Sorting 
   const sortedApps = [...installedApps].sort((a, b) => {
     const aDownloads = parseDownloads(a.downloads);
     const bDownloads = parseDownloads(b.downloads);
 
     switch (sortOption) {
-      case "downloadsHighLow":
-        return bDownloads - aDownloads;
-      case "downloadsLowHigh":
-        return aDownloads - bDownloads;
-      case "sizeHighLow":
-        return b.size - a.size;
-      case "sizeLowHigh":
-        return a.size - b.size;
-      default:
-        return 0;
+      case "downloadsHighLow": return bDownloads - aDownloads;
+      case "downloadsLowHigh": return aDownloads - bDownloads;
+      case "sizeHighLow": return b.size - a.size;
+      case "sizeLowHigh": return a.size - b.size;
+      default: return 0;
     }
   });
 
-  // Loader section
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen bg-[#D2D2D2]">
         <div className="flex flex-col items-center">
           <div className="w-12 h-12 border-4 border-[#632EE3] border-t-transparent rounded-full animate-spin"></div>
-          <p className="mt-4 text-[#632EE3] font-semibold text-lg">
-            Loading Installed Apps...
-          </p>
+          <p className="mt-4 text-[#632EE3] font-semibold text-lg">Loading Installed Apps...</p>
         </div>
       </div>
     );
@@ -83,20 +65,14 @@ const Installation = () => {
   return (
     <div className="bg-[#D2D2D2] min-h-screen">
       <Toaster />
-
       <div className="text-center py-5">
         <h2 className="text-2xl font-bold text-black">Your Installed Apps</h2>
-        <p className="text-[12px] text-gray-500">
-          Explore all apps you’ve installed
-        </p>
+        <p className="text-[12px] text-gray-500">Explore all apps you’ve installed</p>
       </div>
 
       {/* Sort Section */}
-      <div className="flex flex-wrap justify-between items-center px-7 py-5 gap-3">
-        <h2 className="text-black font-bold">
-          {installedApps.length} Apps Found
-        </h2>
-
+      <div className="flex flex-wrap justify-between items-center px-4 sm:px-7 py-5 gap-3">
+        <h2 className="text-black font-bold">{installedApps.length} Apps Found</h2>
         <select
           value={sortOption}
           onChange={(e) => setSortOption(e.target.value)}
@@ -111,49 +87,32 @@ const Installation = () => {
       </div>
 
       {/* App List Section */}
-      <div className="w-10/12 mx-auto px-6 py-3">
+      <div className="w-full sm:w-10/12 mx-auto px-4 sm:px-6 py-3 flex flex-col gap-3">
         {sortedApps.length > 0 ? (
           sortedApps.map((app) => (
             <div
               key={app.id}
-              className="bg-white h-16 w-auto rounded-md flex justify-between items-center px-7 mb-3 hover:shadow-md transition-all duration-300"
+              className="bg-white rounded-md flex flex-col sm:flex-row justify-between items-center px-4 py-3 sm:px-7 hover:shadow-md transition-all duration-300"
             >
-              <div className="flex items-center gap-2">
+              <div className="flex flex-col sm:flex-row items-center sm:gap-4 w-full sm:w-auto">
                 <img
-                  className="h-12 w-12 rounded-sm object-cover"
+                  className="h-16 w-16 sm:h-12 sm:w-12 rounded-sm object-cover"
                   src={app.image}
                   alt={app.title}
                 />
-                <div>
-                  <h2 className="text-black text-[13px] font-semibold">
-                    {app.title}
-                  </h2>
-                  <div className="flex items-center gap-4">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 mt-2 sm:mt-0">
+                  <h2 className="text-black text-[13px] font-semibold">{app.title}</h2>
+                  <div className="flex flex-wrap gap-2 sm:gap-4 items-center">
                     <div className="flex items-center gap-1">
-                      <FontAwesomeIcon
-                        icon={faDownload}
-                        className="text-[12px] text-[#00D390]"
-                      />
-                      <p className="text-[12px] font-semibold text-[#00D390]">
-                        {app.downloads}
-                      </p>
+                      <FontAwesomeIcon icon={faDownload} className="text-[12px] text-[#00D390]" />
+                      <p className="text-[12px] font-semibold text-[#00D390]">{app.downloads}</p>
                     </div>
                     <div className="flex items-center gap-1">
-                      <FontAwesomeIcon
-                        icon={faStar}
-                        className="text-[12px] text-[#FF8811]"
-                      />
-                      <p className="text-[12px] font-semibold text-[#FF8811]">
-                        {app.ratingAvg}
-                      </p>
+                      <FontAwesomeIcon icon={faStar} className="text-[12px] text-[#FF8811]" />
+                      <p className="text-[12px] font-semibold text-[#FF8811]">{app.ratingAvg}</p>
                     </div>
                     <div className="flex items-center gap-1">
-                      <p className="text-[12px] font-semibold text-[#627382]">
-                        {app.size}
-                      </p>
-                      <p className="text-[12px] font-semibold text-[#627382]">
-                        MB
-                      </p>
+                      <p className="text-[12px] font-semibold text-[#627382]">{app.size} MB</p>
                     </div>
                   </div>
                 </div>
@@ -161,16 +120,14 @@ const Installation = () => {
 
               <button
                 onClick={() => handleUninstall(app.id)}
-                className="bg-[#FF5E5E] hover:bg-[#ff4040] transition-colors text-white h-7 w-20 rounded-sm text-[12px]"
+                className="bg-[#FF5E5E] hover:bg-[#ff4040] transition-colors text-white h-7 w-full sm:w-20 mt-2 sm:mt-0 rounded-sm text-[12px]"
               >
                 Uninstall
               </button>
             </div>
           ))
         ) : (
-          <p className="text-center text-gray-500 py-10">
-            No apps installed yet.
-          </p>
+          <p className="text-center text-gray-500 py-10">No apps installed yet.</p>
         )}
       </div>
     </div>
@@ -178,3 +135,4 @@ const Installation = () => {
 };
 
 export default Installation;
+
